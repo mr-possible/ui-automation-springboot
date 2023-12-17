@@ -19,7 +19,7 @@ public class WebDriverConfig {
     //@Primary
     @ConditionalOnProperty(name = "browser", havingValue = "chrome")
     public WebDriver chromeDriver() {
-        WebDriverManager.chromedriver().version("92.0.4515.107").setup();
+        WebDriverManager.chromedriver().setup();
         return new ChromeDriver();
     }
 

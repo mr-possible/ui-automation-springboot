@@ -1,10 +1,9 @@
 package com.sambhav.testautomationspring.config;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
@@ -24,12 +23,12 @@ public class RemoteWebDriverConfig {
     @Bean
     @ConditionalOnProperty(name = "browser", havingValue = "firefox")
     public WebDriver remoteFirefoxDriver() {
-        return new RemoteWebDriver(this.url, DesiredCapabilities.firefox());
+        return new RemoteWebDriver(this.url, new FirefoxOptions());
     }
 
     @Bean
     @ConditionalOnProperty(name = "browser", havingValue = "chrome")
     public WebDriver remoteChromeDriver() {
-        return new RemoteWebDriver(this.url, DesiredCapabilities.chrome());
+        return new RemoteWebDriver(this.url, new ChromeOptions());
     }
 }

@@ -1,12 +1,11 @@
 package com.sambhav.testautomationspring.page;
 
 import com.sambhav.testautomationspring.config.WebDriverWaitConfig;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 
 public abstract class Base {
 
