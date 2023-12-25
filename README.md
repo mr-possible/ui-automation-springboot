@@ -1,3 +1,3 @@
 # Test Automation using Spring Boot & Cucumber
 
-(Content coming soon. . .)
+A test automation framework made using Spring Boot.
